@@ -1,8 +1,10 @@
-# Void World Generator
+# EmptyWorldGenerator
 
 Create pure void worlds for building, testing, and creative projects.
 
-The VoidWorldGenerator plugin adds a completely empty void world generator to Hytale servers. Perfect for Skyblock, map making, and performance testing.
+The EmptyWorldGenerator plugin adds a completely empty void world generator to Hytale servers. Perfect for Skyblock, map making, and performance testing.
+
+**Download the latest release on Modtale:** [Void World Generator](https://modtale.net/mod/voidgen)
 
 ## Quick Start
 
@@ -93,14 +95,6 @@ World not generating?
 - Initial release with void world generation
 - Spawn platform support
 - Basic biome integration
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
 

@@ -1,0 +1,22 @@
+{
+    "Group": "io.github.britakee.empty",
+    "Name": "VoidWorldGenerator",
+    "Version": "1.0.0",
+    "Description": "Adds a void world generator to the /world create command",
+    "Authors": [
+        {
+            "Name": "Britakee"
+        }
+    ],
+    "Website": "https://github.com/realBritakee?tab=repositories",
+    "ServerVersion": "*",
+    "Dependencies": {
+        "Hytale:EntityModule": "*"
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "io.github.britakee.empty.EmptyWorldGenerator",
+    "IncludesAssetPack": true
+}

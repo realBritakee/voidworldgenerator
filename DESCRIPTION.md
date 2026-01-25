@@ -13,7 +13,7 @@ VoidWorldGenerator adds a clean void world generator to the /world add command. 
 - Includes asset pack for default void biome setup
 
 ## Commands
-- /world add <name> --gen=Void
+- /world add <nameoftheworld> --gen=Void
 
 ## Requirements
 - Hytale Server (as dependency)
@@ -22,7 +22,7 @@ VoidWorldGenerator adds a clean void world generator to the /world add command. 
 ## Installation
 1. Drop VoidWorldGenerator into your server mods folder
 2. Start the server once to load the generator
-3. Create a world with /world add <name> --gen=Void
+3. Create a world with /world add <nameoftheworld> --gen=Void
 
 ## Support
 Questions or issues? Join the https://discord.gg/gCRv62araB or contact Britakee.

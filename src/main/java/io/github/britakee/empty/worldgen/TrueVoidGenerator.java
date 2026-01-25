@@ -1,6 +1,9 @@
 package io.github.britakee.empty.worldgen;
 
+import com.hypixel.hytale.builtin.hytalegenerator.tintproviders.TintProvider;
 import com.hypixel.hytale.math.vector.Transform;
+import com.hypixel.hytale.server.core.asset.type.blocktype.config.BlockType;
+import com.hypixel.hytale.server.core.asset.type.environment.config.Environment;
 import com.hypixel.hytale.server.core.universe.world.worldgen.*;
 
 import java.util.concurrent.CompletableFuture;
@@ -13,9 +16,27 @@ public class TrueVoidGenerator implements IWorldGen {
     private static final int SPAWN_Y = 180;
     private static final int SPAWN_Z = 0;
 
-    // Block ID - ID 7 = Crude Platform (the one you wanted!)
-    // Change this number to try different blocks if needed
-    private static final int SPAWN_BLOCK_ID = 178;
+    private static final String SPAWN_BLOCK_KEY = "Rock_Bedrock";
+    private static final int SPAWN_BLOCK_ID;
+    private static final int ENVIRONMENT_ID;
+    private static final int TINT_ID;
+
+    static {
+        int envId = Environment.getAssetMap().getIndex("Default");
+        if (envId == Integer.MIN_VALUE) {
+            envId = Environment.getAssetMap().getIndex("Env_Default_Void");
+        }
+        if (envId == Integer.MIN_VALUE) {
+            envId = 0;
+        }
+        ENVIRONMENT_ID = envId;
+        TINT_ID = TintProvider.DEFAULT_TINT;
+        SPAWN_BLOCK_ID = BlockType.getBlockIdOrUnknown(
+                SPAWN_BLOCK_KEY,
+                "Failed to find block key {0}, using fallback for spawn platform",
+                SPAWN_BLOCK_KEY
+        );
+    }
 
     @Override
     public CompletableFuture<GeneratedChunk> generate(int seed, long index, int x, int z, LongPredicate stillNeeded) {
@@ -32,6 +53,13 @@ public class TrueVoidGenerator implements IWorldGen {
 
             // Set the coordinates correctly
             blockChunk.setCoordinates(index, x, z);
+
+            for (int localX = 0; localX < 32; localX++) {
+                for (int localZ = 0; localZ < 32; localZ++) {
+                    blockChunk.setTint(localX, localZ, TINT_ID);
+                    blockChunk.setEnvironmentColumn(localX, localZ, ENVIRONMENT_ID);
+                }
+            }
 
             // Generate height map (required for grass tinting and other systems)
             blockChunk.generateHeight();

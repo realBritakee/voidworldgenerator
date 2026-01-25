@@ -18,9 +18,9 @@ public class EmptyWorldGenerator extends JavaPlugin {
         super.setup();
 
         // Register the void world generator - just pass the codec directly
-        IWorldGenProvider.CODEC.register(Priority.DEFAULT, "void",
+        IWorldGenProvider.CODEC.register(Priority.DEFAULT, "Void",
                 VoidWorldGenerator.class, VoidWorldGenerator.CODEC);
 
-        ((HytaleLogger.Api)getLogger().atInfo()).log("EmptyWorldGenerator plugin loaded - void generator registered!");
+        ((HytaleLogger.Api)getLogger().atInfo()).log("EmptyWorldGenerator plugin loaded - Void generator registered!");
     }
 }

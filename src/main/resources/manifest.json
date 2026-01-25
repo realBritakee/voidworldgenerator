@@ -1,7 +1,7 @@
 {
     "Group": "io.github.britakee.empty",
     "Name": "VoidWorldGenerator",
-    "Version": "1.0.0",
+    "Version": "1.0.1",
     "Description": "Adds a void world generator to the /world create command",
     "Authors": [
         {

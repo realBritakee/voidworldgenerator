@@ -7,6 +7,8 @@ build/
 
 ### Hytale ###
 run/
+Hytale-Docs/
+*.log
 
 ### IntelliJ IDEA ###
 .idea/
